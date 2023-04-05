@@ -14,7 +14,7 @@ public class _01_SeydaStepDef {
 
     }
 
-    @When("I navigate to Admin \\/ User Management page.")
+    @When("I navigate to Admin User Management page.")
     public void ıNavigateToAdminUserManagementPage() {
 
     }
