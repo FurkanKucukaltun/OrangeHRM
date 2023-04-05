@@ -2,6 +2,7 @@ package StepDefinitions;
 
 import Pages.DialogContent;
 import Pages.LeftNav;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 
@@ -17,5 +18,9 @@ public class _01_SeydaStepDef {
     @When("I navigate to Admin User Management page.")
     public void ıNavigateToAdminUserManagementPage() {
 
+    }
+
+    @And("I click on Add button")
+    public void ıClickOnAddButton() {
     }
 }
