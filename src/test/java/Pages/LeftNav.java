@@ -11,14 +11,20 @@ public class LeftNav extends Parent{
         PageFactory.initElements(GWD.getDriver(),this);
     }
 
-    @FindBy(xpath = "ww")
-    private WebElement ddd;
+    @FindBy(xpath = "//span[text()='Admin']")
+    private WebElement admin;
 
     public WebElement getWebElement(String strButton){
 
         switch (strButton){
 
-            //  case "setup": return setup;
+             case "admin": return admin;
+//             case "": return ;
+//             case "": return ;
+//             case "": return ;
+//             case "": return ;
+//             case "": return ;
+//             case "": return ;
 
         }
 
