@@ -9,6 +9,8 @@ Feature: Successfully creating new ESS user
     And Click on the element in Dialog
       | addBtn |
 
+  Scenario:
+
     And User sending the keys in Dialog Content
       | employeeName    | technoStd |
       | userName        | technoStd |
