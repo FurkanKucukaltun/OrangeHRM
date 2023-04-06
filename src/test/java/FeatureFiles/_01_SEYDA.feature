@@ -12,8 +12,8 @@ Feature: Successfully creating new ESS user
   Scenario:
 
     And User sending the keys in Dialog Content
-      | employeeName    | technoStd |
-      | userName        | technoStd |
+      | employeeName    | Odis  Adalwin |
+      | userName        | Adalwin |
       | password        | 123456    |
       | confirmPassword | 123456    |
 

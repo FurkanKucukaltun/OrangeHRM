@@ -23,22 +23,22 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//*[text()=' Add ']")
     private WebElement addBtn;
 
-    @FindBy(xpath = "//label[text()='User Role']/../following-sibling::div")
+    @FindBy(xpath = "(//div[@class='oxd-select-text oxd-select-text--active'])[1]")
     private WebElement userRoleSelect;
 
-    @FindBy(xpath = "//label[text()='Status']/../following-sibling::div")
+    @FindBy(xpath = "(//div[@class='oxd-select-text oxd-select-text--active'])[2]")
     private WebElement statusSelect;
 
-    @FindBy(xpath = "//label[text()='Employee Name']/../following-sibling::div")
+    @FindBy(xpath = "//input[@placeholder='Type for hints...']")
     private WebElement employeeName;
 
-    @FindBy(xpath = "//label[text()='Username']/../following-sibling::div")
+    @FindBy(xpath = "(//input[@class='oxd-input oxd-input--active'])[2]")
     private WebElement userName;
 
-    @FindBy(xpath = "//label[text()='Password']/../following-sibling::div")
+    @FindBy(xpath = "(//input[@class='oxd-input oxd-input--active'])[3]")
     private WebElement password;
 
-    @FindBy(xpath = "//label[text()='Confirm Password']/../following-sibling::div")
+    @FindBy(xpath = "(//input[@class='oxd-input oxd-input--active'])[4]")
     private WebElement confirmPassword;
 
     @FindBy(xpath = "//button[text()=' Save ']")
