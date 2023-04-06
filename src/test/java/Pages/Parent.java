@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -16,7 +17,7 @@ import java.time.Duration;
 
 public class Parent {
 
-   WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(5));
+   WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(10));
 
    public void clickFunction (WebElement element){
        waitUntilClickable(element);
@@ -29,6 +30,13 @@ public class Parent {
         scrollToElement(element);
         element.clear();
         element.sendKeys(text);
+    }
+
+    public void selectFunction(WebElement element, String text) {
+        waitUntilVisible(element);
+        scrollToElement(element);
+        Select selectMenu=new Select(element);
+        selectMenu.selectByVisibleText(text);
     }
 
     public void verifyContainsTextFunction (WebElement element, String value){
