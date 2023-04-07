@@ -64,5 +64,9 @@ public class _01_SeydaStepDef {
                     .build();
             aksiyon.perform();
         }
+
+        System.out.println(" ***************");
     }
+
+
 }

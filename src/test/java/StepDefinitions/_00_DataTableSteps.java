@@ -39,7 +39,7 @@ public class _00_DataTableSteps {
             dc.clickFunction(element);
         }
 
-    }
+    }<<<<<<
 
     @And("Select on the element in Dialog")
     public void selectOnTheElementInDialog(DataTable dt) {
