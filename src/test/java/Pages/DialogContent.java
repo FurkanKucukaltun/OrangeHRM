@@ -32,13 +32,16 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//input[@placeholder='Type for hints...']")
     private WebElement employeeName;
 
+    @FindBy(xpath = "//div[@class='oxd-autocomplete-dropdown  --position-bottom']")
+    private WebElement employeeName2;  //[role='listbox']
+
     @FindBy(xpath = "(//input[@class='oxd-input oxd-input--active'])[2]")
     private WebElement userName;
 
-    @FindBy(xpath = "(//input[@class='oxd-input oxd-input--active'])[3]")
+    @FindBy(xpath = "(//input[@type='password'])[1]")
     private WebElement password;
 
-    @FindBy(xpath = "(//input[@class='oxd-input oxd-input--active'])[4]")
+    @FindBy(xpath = "(//input[@type='password'])[2]")
     private WebElement confirmPassword;
 
     @FindBy(xpath = "//button[text()=' Save ']")
@@ -71,6 +74,7 @@ public class DialogContent extends Parent {
             case "statusSelect": return statusSelect;
             case "userRoleSelect": return userRoleSelect;
             case "employeeName": return employeeName;
+            case "employeeName2": return employeeName2;
             case "userName": return userName;
             case "password": return password;
             case "confirmPassword": return confirmPassword;

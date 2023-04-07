@@ -11,11 +11,19 @@ Feature: Successfully creating new ESS user
 
   Scenario:
 
+    And User sending the keys in Employee Name
+      | employeeName    | O |
+
     And User sending the keys in Dialog Content
-      | employeeName    | Odis  Adalwin |
-      | userName        | Adalwin |
-      | password        | 123456    |
-      | confirmPassword | 123456    |
+
+      | userName        | Adalwin      |
+      | password        | Aa234567.     |
+      | confirmPassword | Aa234567.     |
+
+
+    And Click on the element in Dialog
+
+      | employeeName2 |
 
     And Select on the element in Dialog
       | userRoleSelect | ESS     |

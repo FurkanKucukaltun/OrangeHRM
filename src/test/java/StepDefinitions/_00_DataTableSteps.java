@@ -2,14 +2,19 @@ package StepDefinitions;
 
 import Pages.DialogContent;
 import Pages.LeftNav;
+import Utilities.GWD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 public class _00_DataTableSteps {
 
+    WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(10));
     LeftNav ln=new LeftNav();
     DialogContent dc=new DialogContent();
 
@@ -30,6 +35,7 @@ public class _00_DataTableSteps {
         List<String> dialogBtns=items.asList(String.class);
         for (String dialogBtn: dialogBtns) {
             WebElement element = dc.getWebElement(dialogBtn);
+            wait.until(ExpectedConditions.visibilityOf(dc.getWebElement(dialogBtn)));
             dc.clickFunction(element);
         }
 
