@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class DialogContent extends Parent {
 
     public DialogContent() {
@@ -32,8 +34,8 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//input[@placeholder='Type for hints...']")
     private WebElement employeeName;
 
-    @FindBy(xpath = "//div[@class='oxd-autocomplete-dropdown  --position-bottom']")
-    private WebElement employeeName2;  //[role='listbox']
+    @FindBy(xpath = "//div[role='listbox']")
+    private WebElement employeeNameList;  //div[@class='oxd-autocomplete-text-input--after']
 
     @FindBy(xpath = "(//input[@class='oxd-input oxd-input--active'])[2]")
     private WebElement userName;
@@ -46,6 +48,12 @@ public class DialogContent extends Parent {
 
     @FindBy(xpath = "//button[text()=' Save ']")
     private WebElement saveBtn;
+
+    @FindBy(xpath = "//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']")
+    private WebElement invalidMsg;
+
+
+
 
 //    @FindBy(xpath = "")
 //    private WebElement ;
@@ -74,12 +82,12 @@ public class DialogContent extends Parent {
             case "statusSelect": return statusSelect;
             case "userRoleSelect": return userRoleSelect;
             case "employeeName": return employeeName;
-            case "employeeName2": return employeeName2;
+            case "employeeNameList": return employeeNameList;
             case "userName": return userName;
             case "password": return password;
             case "confirmPassword": return confirmPassword;
             case "saveBtn": return saveBtn;
-//            case "": return ;
+            case "invalidMsg": return invalidMsg;
 //            case "": return ;
 //            case "": return ;
 //            case "": return ;
@@ -88,4 +96,15 @@ public class DialogContent extends Parent {
         return null;
     }
 
+
+    public List<WebElement> getWebElementList(String strButton) {
+
+        switch (strButton) {
+
+            //  case "employeeNameList": return employeeNameList;
+
+        }
+
+        return null;
+    }
 }

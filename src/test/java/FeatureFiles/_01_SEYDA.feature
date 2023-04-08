@@ -9,21 +9,20 @@ Feature: Successfully creating new ESS user
     And Click on the element in Dialog
       | addBtn |
 
-  Scenario:
-
-    And User sending the keys in Employee Name
-      | employeeName    | O |
+  Scenario: Add Ess user
 
     And User sending the keys in Dialog Content
 
-      | userName        | Adalwin      |
-      | password        | Aa234567.     |
-      | confirmPassword | Aa234567.     |
+      | userName        | Adalwin   |
+      | password        | Aa234567. |
+      | confirmPassword | Aa234567. |
 
+    And User sending the keys in Employee Name
+      | employeeName | Odis Adalwin |
 
-    And Click on the element in Dialog
+    And Click on the element in select
+      | employeeNameList |
 
-      | employeeName2 |
 
     And Select on the element in Dialog
       | userRoleSelect | ESS     |
@@ -31,3 +30,14 @@ Feature: Successfully creating new ESS user
 
     And Click on the element in Dialog
       | saveBtn |
+
+  Scenario: Verifying admin name in Employee Field
+
+    And User sending the keys in Dialog Content
+      | employeeName | seyda |
+
+    Then Verify contains text
+      | employeeNameList | No Records Found |
+
+    Then Verify contains text
+      | invalidMsg | invalid |

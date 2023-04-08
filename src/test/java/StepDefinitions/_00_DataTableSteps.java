@@ -5,15 +5,14 @@ import Pages.LeftNav;
 import Utilities.GWD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 import java.util.List;
 
 public class _00_DataTableSteps {
-
     WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(10));
     LeftNav ln=new LeftNav();
     DialogContent dc=new DialogContent();
@@ -41,6 +40,8 @@ public class _00_DataTableSteps {
 
     }
 
+
+
     @And("Select on the element in Dialog")
     public void selectOnTheElementInDialog(DataTable dt) {
         List<List<String>> items=dt.asLists(String.class);
@@ -62,6 +63,21 @@ public class _00_DataTableSteps {
         }
 
     }
+
+
+    @Then("Verify contains text")
+    public void verifyContainsText(DataTable dt) {
+        List<List<String>> items=dt.asLists(String.class);
+
+        for (int i = 0; i < items.size(); i++) {
+            WebElement element = dc.getWebElement(items.get(i).get(0));
+            dc.verifyContainsTextFunction(element,items.get(i).get(1));
+        }
+
+
+    }
+
+
 
 //Delete için eklenecek
 //    @And("User delete item from Dialog Content")
