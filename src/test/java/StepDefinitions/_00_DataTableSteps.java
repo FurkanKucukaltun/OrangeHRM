@@ -64,7 +64,6 @@ public class _00_DataTableSteps {
 
     }
 
-
     @Then("Verify contains text")
     public void verifyContainsText(DataTable dt) {
         List<List<String>> items=dt.asLists(String.class);

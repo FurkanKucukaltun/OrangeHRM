@@ -36,7 +36,6 @@ public class _01_SeydaStepDef {
 
     }
 
-
     @And("Click on the element in select Employee Name")
     public void clickOnTheElementInSelectEmployeeName(DataTable items) {
         List<List<String>> dialogBtns = items.asLists(String.class);
@@ -50,7 +49,6 @@ public class _01_SeydaStepDef {
 
         }
     }
-
 
         @And("Click on the user role element in select")
         public void clickOnTheUserRoleElementInSelect(DataTable dt) {
