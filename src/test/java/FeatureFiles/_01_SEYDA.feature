@@ -18,9 +18,9 @@ Feature: Successfully creating new ESS user
       | confirmPassword | Aa234567. |
 
     And User sending the keys in Employee Name
-      | employeeName | Odis Adalwin |
+      | employeeName | A |
 
-    And Click on the element in select
+    And Click on the element in select Employee Name
       | employeeNameList |
 
 
