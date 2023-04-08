@@ -35,7 +35,7 @@ public class DialogContent extends Parent {
     private WebElement employeeName;
 
     @FindBy(xpath = "//div[@role='listbox']")
-    private List<WebElement> employeeNameList;  //div[@class='oxd-autocomplete-text-input--after']
+    private WebElement employeeNameList;  //div[@class='oxd-autocomplete-text-input--after']
 
     @FindBy(xpath = "(//input[@class='oxd-input oxd-input--active'])[2]")
     private WebElement userName;
@@ -52,8 +52,11 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']")
     private WebElement invalidMsg;
 
+    @FindBy(xpath = "//*[text()='Should be at least 5 characters']")
+    private WebElement errorMsg;
 
-
+    @FindBy(xpath = "//h6[text()='Add User']")
+    private WebElement AddUserHeading;
 
 //    @FindBy(xpath = "")
 //    private WebElement ;
@@ -82,14 +85,14 @@ public class DialogContent extends Parent {
             case "statusSelect": return statusSelect;
             case "userRoleSelect": return userRoleSelect;
             case "employeeName": return employeeName;
-         //   case "employeeNameList": return employeeNameList;
+            case "employeeNameList": return employeeNameList;
             case "userName": return userName;
             case "password": return password;
             case "confirmPassword": return confirmPassword;
             case "saveBtn": return saveBtn;
             case "invalidMsg": return invalidMsg;
-//            case "": return ;
-//            case "": return ;
+            case "errorMsg": return errorMsg;
+            case "AddUserHeading": return AddUserHeading;
 //            case "": return ;
         }
 
@@ -97,15 +100,15 @@ public class DialogContent extends Parent {
     }
 
 
-    public List<WebElement> getWebElementList(String strButton) {
+//    public List<WebElement> getWebElementList(String strButton) {
+//
+//        switch (strButton) {
+//
+//              //case "employeeNameList": return employeeNameList;
+//
+//        }
+//
+//        return null;
 
-        switch (strButton) {
-
-              case "employeeNameList": return employeeNameList;
-
-        }
-
-        return null;
-
-    }
+ //   }
 }
