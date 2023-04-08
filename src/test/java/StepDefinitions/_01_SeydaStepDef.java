@@ -55,7 +55,6 @@ public class _01_SeydaStepDef {
             List<String> items = dt.asList(String.class);
             Actions actions = new Actions(GWD.getDriver());
 
-
             for (int i = 0; i < items.size(); i++) {
                 WebElement element = dc.getWebElement(items.get(i));
                 wait.until(ExpectedConditions.visibilityOf(element));
@@ -69,14 +68,12 @@ public class _01_SeydaStepDef {
              //   dc.clickFunction(dc.getWebElement("userRoleSelectArrow"));
 
             }
-
         }
 
         @And("Click on the status element in select")
         public void clickOnTheStatusElementInSelect(DataTable dt) {
             List<String> items = dt.asList(String.class);
             Actions actions = new Actions(GWD.getDriver());
-
 
                 for (int i = 0; i < items.size(); i++) {
                     WebElement element = dc.getWebElement(items.get(i));

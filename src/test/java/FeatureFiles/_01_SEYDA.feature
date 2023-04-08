@@ -49,6 +49,7 @@ Feature: Successfully creating new ESS user
 
   Scenario: Display all required elements on User Management page for Admin users
 
+
     Then Verify contains text
       | saveBtn | Save   |
       | cancel  | Cancel |
