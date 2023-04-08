@@ -58,20 +58,18 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//h6[text()='Add User']")
     private WebElement AddUserHeading;
 
-//    @FindBy(xpath = "")
-//    private WebElement ;
-//
-//    @FindBy(xpath = "")
-//    private WebElement ;
-//
-//    @FindBy(xpath = "")
-//    private WebElement ;
-//
-//    @FindBy(xpath = "")
-//    private WebElement ;
+    @FindBy(xpath = "(//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message'])[2]")
+    private WebElement confirmPasswordMsg;
 
+    @FindBy(xpath = "//i[@class='oxd-icon bi-plus oxd-button-icon']")
+                                             //   "//button[@class='oxd-button oxd-button--medium oxd-button--secondary']")
+    private WebElement addBtnVerify;        //   çalışmazsa , kontrol et? (waitte de located değiştir)
 
+    @FindBy(xpath = "//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']")
+    private WebElement passwordChr;
 
+//    @FindBy(xpath = "")
+//    private WebElement ;
 
 
     public WebElement getWebElement(String strButton) {
@@ -93,6 +91,10 @@ public class DialogContent extends Parent {
             case "invalidMsg": return invalidMsg;
             case "errorMsg": return errorMsg;
             case "AddUserHeading": return AddUserHeading;
+            case "confirmPasswordMsg": return confirmPasswordMsg;
+            case "addBtnVerify": return addBtnVerify;
+            case "passwordChr": return passwordChr;
+
 //            case "": return ;
         }
 
@@ -110,5 +112,5 @@ public class DialogContent extends Parent {
 //
 //        return null;
 
- //   }
+    //   }
 }
