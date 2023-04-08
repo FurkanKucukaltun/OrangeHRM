@@ -17,6 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Optional;
 
 public class _01_SeydaStepDef {
 
@@ -27,7 +28,7 @@ public class _01_SeydaStepDef {
     @Given("I log in as an Admin")
     public void iLogInAsAnAdmin() {
         GWD.getDriver().get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-                GWD.getDriver().manage().window().maximize();
+        GWD.getDriver().manage().window().maximize();
 
         dc.sendKeysFunction(dc.getWebElement("usernameLogin"), "Admin");
         dc.sendKeysFunction(dc.getWebElement("passwordLogin"), "admin123");
@@ -36,30 +37,60 @@ public class _01_SeydaStepDef {
     }
 
 
-
     @And("Click on the element in select Employee Name")
-    public void clickOnTheElementInSelect(DataTable items) {
-        List<String> dialogBtns=items.asList(String.class);
-        for (String dialogBtn: dialogBtns) {
-            List<WebElement> element = dc.getWebElementList(dialogBtn);
-         //   wait.until(ExpectedConditions.textToBePresentInElement(element, "Odis Adalwin"));
-            wait.until(ExpectedConditions.numberOfElementsToBeMoreThan((By)element, 1));
+    public void clickOnTheElementInSelectEmployeeName(DataTable items) {
+        List<List<String>> dialogBtns = items.asLists(String.class);
 
-            dc.clickFunction(element.get(2));
 
-        }}
+        for (int i = 0; i < dialogBtns.size(); i++) {
+            WebElement element = dc.getWebElement(dialogBtns.get(i).get(0));
+            wait.until(ExpectedConditions.textToBePresentInElement(element,dialogBtns.get(i).get(1)));
 
-    @And("User sending the keys in Employee Name")
-    public void userSendingTheKeysInEmployeeName(DataTable dt) {
+            dc.clickFunction(element);
 
-        List<List<String>> items = dt.asLists(String.class);
-
-        for (int i = 0; i < items.size(); i++) {
-            WebElement element = dc.getWebElement(items.get(i).get(0));
-            dc.sendKeysFunction(element, items.get(i).get(1));
         }
-
-
     }
 
+
+        @And("Click on the user role element in select")
+        public void clickOnTheUserRoleElementInSelect(DataTable dt) {
+            List<String> items = dt.asList(String.class);
+            Actions actions = new Actions(GWD.getDriver());
+
+
+            for (int i = 0; i < items.size(); i++) {
+                WebElement element = dc.getWebElement(items.get(i));
+                wait.until(ExpectedConditions.visibilityOf(element));
+                Action action = actions.moveToElement(element).click().
+                        keyDown(Keys.ARROW_DOWN).keyUp(Keys.ARROW_DOWN).
+                        keyDown(Keys.ARROW_DOWN).keyUp(Keys.ARROW_DOWN).
+                click().
+                        keyDown(Keys.ENTER).keyUp(Keys.ENTER).build();
+                action.perform();
+                System.out.println(element.getText());
+             //   dc.clickFunction(dc.getWebElement("userRoleSelectArrow"));
+
+            }
+
+        }
+
+        @And("Click on the status element in select")
+        public void clickOnTheStatusElementInSelect(DataTable dt) {
+            List<String> items = dt.asList(String.class);
+            Actions actions = new Actions(GWD.getDriver());
+
+
+                for (int i = 0; i < items.size(); i++) {
+                    WebElement element = dc.getWebElement(items.get(i));
+                    wait.until(ExpectedConditions.visibilityOf(element));
+                    Action action = actions.moveToElement(element).click().
+                            keyDown(Keys.ARROW_DOWN).keyUp(Keys.ARROW_DOWN).
+                            click(). keyDown(Keys.ENTER).keyUp(Keys.ENTER).build();
+
+                    action.perform();
+                //     dc.clickFunction(dc.getWebElement("statusSelectArrow"));
+
+
+            }
+    }
 }

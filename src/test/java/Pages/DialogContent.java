@@ -25,17 +25,23 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//*[text()=' Add ']")
     private WebElement addBtn;
 
-    @FindBy(xpath = "(//div[@class='oxd-select-text oxd-select-text--active'])[1]")
-    private WebElement userRoleSelect;
+    @FindBy(xpath = "(//div[@class='oxd-select-text-input'])[1]")
+    private WebElement userRoleSelect;//div[@class='oxd-select-text oxd-select-text--active'])[1]
+
+    @FindBy(xpath = "(//*[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[1]")
+    private WebElement userRoleSelectArrow;
 
     @FindBy(xpath = "(//div[@class='oxd-select-text oxd-select-text--active'])[2]")
     private WebElement statusSelect;
+
+    @FindBy(xpath = "(//*[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[2]")
+    private WebElement statusSelectArrow;
 
     @FindBy(xpath = "//input[@placeholder='Type for hints...']")
     private WebElement employeeName;
 
     @FindBy(xpath = "//div[@role='listbox']")
-    private List<WebElement> employeeNameList;  //div[@class='oxd-autocomplete-text-input--after']
+    private WebElement employeeNameList;  //div[@class='oxd-autocomplete-text-input--after']
 
     @FindBy(xpath = "(//input[@class='oxd-input oxd-input--active'])[2]")
     private WebElement userName;
@@ -52,14 +58,13 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']")
     private WebElement invalidMsg;
 
+    @FindBy(xpath = "//*[text()='Success']") // locator kontrol et
+    private WebElement successMsg;
 
 
 
-//    @FindBy(xpath = "")
-//    private WebElement ;
-//
-//    @FindBy(xpath = "")
-//    private WebElement ;
+    @FindBy(xpath = "(//button[@type='button'])[2]")
+    private WebElement cancel;
 //
 //    @FindBy(xpath = "")
 //    private WebElement ;
@@ -82,13 +87,16 @@ public class DialogContent extends Parent {
             case "statusSelect": return statusSelect;
             case "userRoleSelect": return userRoleSelect;
             case "employeeName": return employeeName;
-         //   case "employeeNameList": return employeeNameList;
+           case "employeeNameList": return employeeNameList;
             case "userName": return userName;
             case "password": return password;
             case "confirmPassword": return confirmPassword;
             case "saveBtn": return saveBtn;
             case "invalidMsg": return invalidMsg;
-//            case "": return ;
+//            case "statusSelectArrow": return statusSelectArrow;
+//            case "userRoleSelectArrow": return userRoleSelectArrow;
+            case "successMsg": return successMsg;
+            case "cancel": return cancel;
 //            case "": return ;
 //            case "": return ;
         }
@@ -101,7 +109,7 @@ public class DialogContent extends Parent {
 
         switch (strButton) {
 
-              case "employeeNameList": return employeeNameList;
+           //   case "employeeNameList": return employeeNameList;
 
         }
 
