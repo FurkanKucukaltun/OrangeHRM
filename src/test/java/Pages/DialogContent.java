@@ -106,5 +106,6 @@ public class DialogContent extends Parent {
         }
 
         return null;
+
     }
 }
