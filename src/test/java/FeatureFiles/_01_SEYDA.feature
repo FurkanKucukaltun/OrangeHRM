@@ -31,7 +31,6 @@ Feature: Successfully creating new ESS user
     Then Verify contains text
       | successMsg | Success |
 
-
   Scenario: Verifying admin name in Employee Field
     And User sending the keys in Dialog Content
       | employeeName | seyda |
