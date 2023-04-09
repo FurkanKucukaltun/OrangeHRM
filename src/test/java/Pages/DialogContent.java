@@ -78,8 +78,8 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']")
     private WebElement passwordChr;
 
-//    @FindBy(xpath = "")
-//    private WebElement ;
+    @FindBy(xpath = "//*[@class='oxd-table-card']//div[text()='Jasmine Morgan']")
+    private WebElement JasmineMorgan;
 
 
 
@@ -108,9 +108,9 @@ public class DialogContent extends Parent {
             case "required": return required;
             case "alreadyExists": return alreadyExists;
             case "atLeastEightCharacters": return atLeastEightCharacters;
+            case "Jasmine Morgan": return JasmineMorgan;
 
 
-//            case "": return ;
         }
 
         return null;

@@ -9,6 +9,8 @@ import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
 import java.time.Duration;
 import java.util.List;
 
@@ -77,15 +79,15 @@ public class _00_DataTableSteps {
 
     }
 
+    @Then("Display required element")
+    public void displayRequiredElement(DataTable dt) {
+        List<String> items = dt.asList(String.class);
 
+        for (String dialogBtn : items){
+            WebElement element=dc.getWebElement(dialogBtn);
+            dc.waitUntilVisible(element);
+            Assert.assertTrue(element.isDisplayed(),"no such element");
+        }
+    }
 
-//Delete için eklenecek
-//    @And("User delete item from Dialog Content")
-//    public void userDeleteItemFromDialogContent(DataTable dt) {
-//        List<String> dialogBtns=dt.asList(String.class);
-//
-//        for (String strDeleteText: dialogBtns) {
-//            dc.deleteItem(strDeleteText);
-//        }
-//    }
 }
