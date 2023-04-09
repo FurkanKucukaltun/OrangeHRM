@@ -1,4 +1,4 @@
-Feature: Successfully creating new ESS user
+Feature: Failed password verification
 
   Background:
     Given  I log in as an Admin
@@ -15,9 +15,9 @@ Feature: Successfully creating new ESS user
 
       | userName        | Adalwin   |
       | password        | Aa234567. |
-      | confirmPassword | Aa234567. |
+      | confirmPassword | Aa234567x |
 
-    And User sending the keys in Dialog Content
+    And User sending the keys in Employee Name
       | employeeName | A |
 
     And Click on the element in select Employee Name
@@ -31,13 +31,6 @@ Feature: Successfully creating new ESS user
     And Click on the element in Dialog
       | saveBtn |
 
-  Scenario: Verifying admin name in Employee Field
+    Then Verify error message for confirm password
 
-    And User sending the keys in Dialog Content
-      | employeeName | seyda |
 
-    Then Verify contains text
-      | employeeNameList | No Records Found |
-
-    Then Verify contains text
-      | invalidMsg | invalid |

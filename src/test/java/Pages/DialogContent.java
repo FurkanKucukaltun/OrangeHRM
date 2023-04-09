@@ -35,8 +35,8 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//input[@placeholder='Type for hints...']")
     private WebElement employeeName;
 
-    @FindBy(xpath = "")
-    private WebElement employeeNameList;  //div[@class='oxd-autocomplete-text-input--after']
+    @FindBy(xpath = "//div[@role='listbox']")
+    private WebElement employeeNameList;
 
     @FindBy(xpath = "(//input[@class='oxd-input oxd-input--active'])[2]")
     private WebElement userName;
@@ -59,7 +59,14 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//h6[text()='Add User']")
     private WebElement AddUserHeading;
 
-    @FindBy(xpath = "//span [text()='Required']")
+    @FindBy(xpath = "(//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message'])[2]")
+    private WebElement confirmPasswordMsg;
+
+    @FindBy(xpath = "//i[@class='oxd-icon bi-plus oxd-button-icon']")
+                                             //   "//button[@class='oxd-button oxd-button--medium oxd-button--secondary']")
+    private WebElement addBtnVerify;        //   çalışmazsa , kontrol et? (waitte de located değiştir)
+    
+      @FindBy(xpath = "//span [text()='Required']")
     private WebElement required;
 
     @FindBy(xpath = "//span[text()='Already exists']")
@@ -67,11 +74,12 @@ public class DialogContent extends Parent {
 
     @FindBy(xpath = "//span[text()='Should have at least 8 characters']")
     private WebElement atLeastEightCharacters;
-//
+
+    @FindBy(xpath = "//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']")
+    private WebElement passwordChr;
+
 //    @FindBy(xpath = "")
 //    private WebElement ;
-
-
 
 
 
@@ -94,9 +102,14 @@ public class DialogContent extends Parent {
             case "invalidMsg": return invalidMsg;
             case "errorMsg": return errorMsg;
             case "AddUserHeading": return AddUserHeading;
+            case "confirmPasswordMsg": return confirmPasswordMsg;
+            case "addBtnVerify": return addBtnVerify;
+            case "passwordChr": return passwordChr;
             case "required": return required;
             case "alreadyExists": return alreadyExists;
             case "atLeastEightCharacters": return atLeastEightCharacters;
+
+
 //            case "": return ;
         }
 
@@ -104,15 +117,5 @@ public class DialogContent extends Parent {
     }
 
 
-    public List<WebElement> getWebElementList(String strButton) {
 
-        switch (strButton) {
-
-              //case "employeeNameList": return employeeNameList;
-
-        }
-
-        return null;
-
-    }
 }
