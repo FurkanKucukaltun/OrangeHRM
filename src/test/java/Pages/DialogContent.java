@@ -22,6 +22,7 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement loginBtn;
 
+    //div[@role='listbox']
     @FindBy(xpath = "//*[text()=' Add ']")
     private WebElement addBtn;
 
@@ -34,7 +35,7 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//input[@placeholder='Type for hints...']")
     private WebElement employeeName;
 
-    @FindBy(xpath = "//div[@role='listbox']")
+    @FindBy(xpath = "")
     private WebElement employeeNameList;  //div[@class='oxd-autocomplete-text-input--after']
 
     @FindBy(xpath = "(//input[@class='oxd-input oxd-input--active'])[2]")
@@ -58,14 +59,14 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//h6[text()='Add User']")
     private WebElement AddUserHeading;
 
-//    @FindBy(xpath = "")
-//    private WebElement ;
-//
-//    @FindBy(xpath = "")
-//    private WebElement ;
-//
-//    @FindBy(xpath = "")
-//    private WebElement ;
+    @FindBy(xpath = "//span [text()='Required']")
+    private WebElement required;
+
+    @FindBy(xpath = "//span[text()='Already exists']")
+    private WebElement alreadyExists;
+
+    @FindBy(xpath = "//span[text()='Should have at least 8 characters']")
+    private WebElement atLeastEightCharacters;
 //
 //    @FindBy(xpath = "")
 //    private WebElement ;
@@ -93,6 +94,9 @@ public class DialogContent extends Parent {
             case "invalidMsg": return invalidMsg;
             case "errorMsg": return errorMsg;
             case "AddUserHeading": return AddUserHeading;
+            case "required": return required;
+            case "alreadyExists": return alreadyExists;
+            case "atLeastEightCharacters": return atLeastEightCharacters;
 //            case "": return ;
         }
 
@@ -100,15 +104,15 @@ public class DialogContent extends Parent {
     }
 
 
-//    public List<WebElement> getWebElementList(String strButton) {
-//
-//        switch (strButton) {
-//
-//              //case "employeeNameList": return employeeNameList;
-//
-//        }
-//
-//        return null;
+    public List<WebElement> getWebElementList(String strButton) {
 
- //   }
+        switch (strButton) {
+
+              //case "employeeNameList": return employeeNameList;
+
+        }
+
+        return null;
+
+    }
 }
