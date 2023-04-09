@@ -1,4 +1,4 @@
-Feature: We should be able to see Add button displayed
+Feature: Verify Add button displayed
 
   Background:
     Given  I log in as an Admin
@@ -6,6 +6,6 @@ Feature: We should be able to see Add button displayed
     And  Click on the element in LeftNav
       | admin |
 
-  Scenario:
+  Scenario: Verify Add button
 
     Then Verify add button

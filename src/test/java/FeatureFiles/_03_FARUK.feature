@@ -30,10 +30,6 @@ Feature: Verifying mandatory field notification messages.
       | userRoleSelect     |
       | selectRoleESS      |
 
-#    And Select on the element in Dialog
-#      | userRoleSelect | Admin   |
-#      | statusSelect   | Enabled |
-
     And User sending the keys in Dialog Content
 
       | userName        | Admin         |

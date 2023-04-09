@@ -3,6 +3,8 @@ package StepDefinitions;
 import Utilities.GWD;
 import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 public class Hooks {
     @After // her senaryodan sonra çalışacak bölüm
@@ -10,10 +12,10 @@ public class Hooks {
         System.out.println("Senaryo bitti");
 
         if (senaryo.isFailed()){
-            // extend report da çalışan kısım (html ve pdf rapor alınan kısım)
-//            TakesScreenshot ts= (TakesScreenshot) GWD.getDriver();
-//            final byte[] hafizadakiHali=ts.getScreenshotAs(OutputType.BYTES);
-//            senaryo.attach(hafizadakiHali, "image/png","screenshot name");
+   //          extend report da çalışan kısım (html ve pdf rapor alınan kısım)
+            TakesScreenshot ts= (TakesScreenshot) GWD.getDriver();
+            final byte[] hafizadakiHali=ts.getScreenshotAs(OutputType.BYTES);
+            senaryo.attach(hafizadakiHali, "image/png","screenshot name");
         }
 
         GWD.quitDriver();
