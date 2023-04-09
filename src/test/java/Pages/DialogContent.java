@@ -22,6 +22,7 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement loginBtn;
 
+    //div[@role='listbox']
     @FindBy(xpath = "//*[text()=' Add ']")
     private WebElement addBtn;
 
@@ -64,6 +65,15 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//i[@class='oxd-icon bi-plus oxd-button-icon']")
                                              //   "//button[@class='oxd-button oxd-button--medium oxd-button--secondary']")
     private WebElement addBtnVerify;        //   çalışmazsa , kontrol et? (waitte de located değiştir)
+    
+      @FindBy(xpath = "//span [text()='Required']")
+    private WebElement required;
+
+    @FindBy(xpath = "//span[text()='Already exists']")
+    private WebElement alreadyExists;
+
+    @FindBy(xpath = "//span[text()='Should have at least 8 characters']")
+    private WebElement atLeastEightCharacters;
 
     @FindBy(xpath = "//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']")
     private WebElement passwordChr;
@@ -95,6 +105,10 @@ public class DialogContent extends Parent {
             case "confirmPasswordMsg": return confirmPasswordMsg;
             case "addBtnVerify": return addBtnVerify;
             case "passwordChr": return passwordChr;
+            case "required": return required;
+            case "alreadyExists": return alreadyExists;
+            case "atLeastEightCharacters": return atLeastEightCharacters;
+
 
 //            case "": return ;
         }
@@ -103,15 +117,5 @@ public class DialogContent extends Parent {
     }
 
 
-//    public List<WebElement> getWebElementList(String strButton) {
-//
-//        switch (strButton) {
-//
-//              //case "employeeNameList": return employeeNameList;
-//
-//        }
-//
-//        return null;
 
-    //   }
 }
