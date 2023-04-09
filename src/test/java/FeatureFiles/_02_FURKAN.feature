@@ -9,6 +9,7 @@ Feature: Successfully creating new ESS user
     And Click on the element in Dialog
       | addBtn |
 
+
   Scenario: Creating new ESS User by entering only mandatory fields
 
     And Click on the element in Dialog
@@ -18,9 +19,9 @@ Feature: Successfully creating new ESS user
       | selectRoleESS      |
 
     And User sending the keys in Dialog Content
-      | userName        | Adalwin      |
-      | password        | Aa234567.    |
-      | confirmPassword | Aa234567.    |
+      | userName        | Morgan        |
+      | password        | Aa234567.      |
+      | confirmPassword | Aa234567.      |
       | employeeName    | Jasmine Morgan |
 
     And Click on the element in select Employee Name
@@ -41,11 +42,16 @@ Feature: Successfully creating new ESS user
 
     And User sending the keys in Dialog Content
 
-      | userName        | Adal   |
+      | userName | Adal |
 
-   Then Verify error message
+    Then Verify error message
+
+      | errorMsg | Should be at least 5 characters |
+
+
 
   Scenario: Display 'Add User' heading
 
-    Then Verify Add User heading
+    Then Verify contains text
 
+      | AddUserHeading | Add User |

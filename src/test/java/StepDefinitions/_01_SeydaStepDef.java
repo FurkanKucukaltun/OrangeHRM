@@ -1,17 +1,12 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
-import Pages.LeftNav;
 import Utilities.GWD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.Actions;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -22,7 +17,6 @@ public class _01_SeydaStepDef {
 
     WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(10));
     DialogContent dc = new DialogContent();
-    LeftNav ln = new LeftNav();
 
     @Given("I log in as an Admin")
     public void iLogInAsAnAdmin() {
@@ -35,28 +29,17 @@ public class _01_SeydaStepDef {
 
     }
 
-
-
     @And("Click on the element in select Employee Name")
-    public void clickOnTheElementInSelect(DataTable items) {
-        List<String> dialogBtns=items.asList(String.class);
-        for (String dialogBtn: dialogBtns) {
-            WebElement element = dc.getWebElement(dialogBtn);
-           // wait.until(ExpectedConditions.textToBePresentInElement(element, "Odis Adalwin"));
-            wait.until(ExpectedConditions.stalenessOf(element));
-            //wait.until(ExpectedConditions.numberOfElementsToBeMoreThan((By)element, 1));
+    public void clickOnTheElementInSelectEmployeeName(DataTable items) {
+        List<List<String>> dialogBtns = items.asLists(String.class);
+
+
+        for (int i = 0; i < dialogBtns.size(); i++) {
+            WebElement element = dc.getWebElement(dialogBtns.get(i).get(0));
+            wait.until(ExpectedConditions.textToBePresentInElement(element,dialogBtns.get(i).get(1)));
+
             dc.clickFunction(element);
 
-        }}
-
-    @And("User sending the keys in Employee Name")
-    public void userSendingTheKeysInEmployeeName(DataTable dt) {
-
-        List<List<String>> items = dt.asLists(String.class);
-
-        for (int i = 0; i < items.size(); i++) {
-            WebElement element = dc.getWebElement(items.get(i).get(0));
-            dc.sendKeysFunction(element, items.get(i).get(1));
         }
     }
 }

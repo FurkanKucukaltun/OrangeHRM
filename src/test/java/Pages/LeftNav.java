@@ -17,17 +17,8 @@ public class LeftNav extends Parent{
     public WebElement getWebElement(String strButton){
 
         switch (strButton){
-
              case "admin": return admin;
-//             case "": return ;
-//             case "": return ;
-//             case "": return ;
-//             case "": return ;
-//             case "": return ;
-//             case "": return ;
-
         }
-
         return null;
     }
 }

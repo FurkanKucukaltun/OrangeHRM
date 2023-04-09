@@ -14,12 +14,6 @@ public class _03_FarukStepDef {
 
     WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(10));
     DialogContent dc=new DialogContent();
-    @Then("Verify red color message")
-    public void verifyRedColorMessage() {
-
-    wait.until(ExpectedConditions.visibilityOf(dc.getWebElement("required")));
-        Assert.assertTrue(dc.getWebElement("required").getText().equalsIgnoreCase("required"));
-    }
 
     @Then("Verify Already Exists message")
     public void verifyAlreadyExistsMessageMessage() {

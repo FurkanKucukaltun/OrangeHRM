@@ -22,9 +22,7 @@ public class _12_ZehraStepDef {
                 ("//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']")));
 
         Assert.assertTrue(dc.getWebElement("passwordChr").getText().
- equalsIgnoreCase("Your password must contain a lower-case letter, an upper-case letter, a digit and a special character. Try a different password"));
-        // contains("Your password must contain a lower-case letter");
-       // System.out.println("Try a different password");
+        equalsIgnoreCase("Your password must contain a lower-case letter, an upper-case letter, a digit and a special character. Try a different password"));
 
     }
 }

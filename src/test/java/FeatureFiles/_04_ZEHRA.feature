@@ -11,25 +11,17 @@ Feature: Failed password verification
 
   Scenario: Add Ess user
 
+    And Click on the element in Dialog
+      | statusSelect       |
+      | selectStatusEnable |
+      | userRoleSelect     |
+      | selectRoleESS      |
+
     And User sending the keys in Dialog Content
 
-      | userName        | Adalwin   |
-      | password        | Aa234567. |
-      | confirmPassword | Aa234567x |
-
-    And User sending the keys in Employee Name
-      | employeeName | A |
-
-    And Click on the element in select Employee Name
-      | employeeNameList |
-
-
-    And Select on the element in Dialog
-      | userRoleSelect | ESS     |
-      | statusSelect   | Enabled |
-
-    And Click on the element in Dialog
-      | saveBtn |
+      | userName        | Adalwin        |
+      | password        | Aa234567.      |
+      | confirmPassword | Aa234567x      |
 
     Then Verify error message for confirm password
 
