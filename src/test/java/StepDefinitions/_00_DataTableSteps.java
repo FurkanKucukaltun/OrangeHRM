@@ -69,7 +69,6 @@ public class _00_DataTableSteps {
         }
     }
 
-
     @Then("Display required element")
     public void displayRequiredElement(DataTable dt) {
         List<String> items = dt.asList(String.class);

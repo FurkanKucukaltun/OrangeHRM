@@ -50,42 +50,40 @@ public class _01_SeydaStepDef {
         }
     }
 
-        @And("Click on the user role element in select")
-        public void clickOnTheUserRoleElementInSelect(DataTable dt) {
-            List<String> items = dt.asList(String.class);
-            Actions actions = new Actions(GWD.getDriver());
+//        @And("Click on the user role element in select")
+//        public void clickOnTheUserRoleElementInSelect(DataTable dt) {
+//            List<String> items = dt.asList(String.class);
+//            Actions actions = new Actions(GWD.getDriver());
+//
+//            for (int i = 0; i < items.size(); i++) {
+//                WebElement element = dc.getWebElement(items.get(i));
+//                wait.until(ExpectedConditions.visibilityOf(element));
+//                Action action = actions.moveToElement(element).click().
+//                        keyDown(Keys.ARROW_DOWN).keyUp(Keys.ARROW_DOWN).
+//                        keyDown(Keys.ARROW_DOWN).keyUp(Keys.ARROW_DOWN).
+//                click().
+//                        keyDown(Keys.ENTER).keyUp(Keys.ENTER).build();
+//                action.perform();
+//                System.out.println(element.getText());
+//             //   dc.clickFunction(dc.getWebElement("userRoleSelectArrow"));
+//
+//            }
+//        }
+//
+//        @And("Click on the status element in select")
+//        public void clickOnTheStatusElementInSelect(DataTable dt) {
+//            List<String> items = dt.asList(String.class);
+//            Actions actions = new Actions(GWD.getDriver());
+//
+//                for (int i = 0; i < items.size(); i++) {
+//                    WebElement element = dc.getWebElement(items.get(i));
+//                    wait.until(ExpectedConditions.visibilityOf(element));
+//                    Action action = actions.moveToElement(element).click().
+//                            keyDown(Keys.ARROW_DOWN).keyUp(Keys.ARROW_DOWN).
+//                            click(). keyDown(Keys.ENTER).keyUp(Keys.ENTER).build();
+//
+//                    action.perform();
+//
+//            }}
 
-            for (int i = 0; i < items.size(); i++) {
-                WebElement element = dc.getWebElement(items.get(i));
-                wait.until(ExpectedConditions.visibilityOf(element));
-                Action action = actions.moveToElement(element).click().
-                        keyDown(Keys.ARROW_DOWN).keyUp(Keys.ARROW_DOWN).
-                        keyDown(Keys.ARROW_DOWN).keyUp(Keys.ARROW_DOWN).
-                click().
-                        keyDown(Keys.ENTER).keyUp(Keys.ENTER).build();
-                action.perform();
-                System.out.println(element.getText());
-             //   dc.clickFunction(dc.getWebElement("userRoleSelectArrow"));
-
-            }
-        }
-
-        @And("Click on the status element in select")
-        public void clickOnTheStatusElementInSelect(DataTable dt) {
-            List<String> items = dt.asList(String.class);
-            Actions actions = new Actions(GWD.getDriver());
-
-                for (int i = 0; i < items.size(); i++) {
-                    WebElement element = dc.getWebElement(items.get(i));
-                    wait.until(ExpectedConditions.visibilityOf(element));
-                    Action action = actions.moveToElement(element).click().
-                            keyDown(Keys.ARROW_DOWN).keyUp(Keys.ARROW_DOWN).
-                            click(). keyDown(Keys.ENTER).keyUp(Keys.ENTER).build();
-
-                    action.perform();
-                //     dc.clickFunction(dc.getWebElement("statusSelectArrow"));
-
-
-            }
-    }
 }
