@@ -61,16 +61,14 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//*[text()='Success']") // locator kontrol et
     private WebElement successMsg;
 
-
-
     @FindBy(xpath = "(//button[@type='button'])[2]")
     private WebElement cancel;
-//
-//    @FindBy(xpath = "")
-//    private WebElement ;
-//
-//    @FindBy(xpath = "")
-//    private WebElement ;
+
+    @FindBy(xpath = "(//div[@class='oxd-select-wrapper']/div[@role='listbox']/div)[2]")
+    public WebElement selectStatusEnable;
+
+    @FindBy(xpath = "(//div[@class='oxd-select-wrapper']/div[@role='listbox']/div)[3]")
+    public WebElement selectRoleESS;
 
 
 
@@ -97,23 +95,10 @@ public class DialogContent extends Parent {
 //            case "userRoleSelectArrow": return userRoleSelectArrow;
             case "successMsg": return successMsg;
             case "cancel": return cancel;
-//            case "": return ;
-//            case "": return ;
+            case "selectStatusEnable": return selectStatusEnable;
+            case "selectRoleESS": return selectRoleESS;
         }
 
         return null;
-    }
-
-
-    public List<WebElement> getWebElementList(String strButton) {
-
-        switch (strButton) {
-
-           //   case "employeeNameList": return employeeNameList;
-
-        }
-
-        return null;
-
     }
 }

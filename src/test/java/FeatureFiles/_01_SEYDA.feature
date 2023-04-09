@@ -10,31 +10,29 @@ Feature: Successfully creating new ESS user
       | addBtn |
 
   Scenario: Add Ess user
-    And Click on the status element in select
-      | statusSelect |
+    And Click on the element in Dialog
+      | statusSelect       |
+      | selectStatusEnable |
+      | userRoleSelect     |
+      | selectRoleESS      |
 
-    And Click on the user role element in select
-      | userRoleSelect |
+    And User sending the keys in Dialog Content
+      | userName        | Adalwin      |
+      | password        | Aa234567.    |
+      | confirmPassword | Aa234567.    |
+      | employeeName    | Odis Adalwin |
 
-#    And User sending the keys in Dialog Content
-#      | userName        | Adalwin      |
-#      | password        | Aa234567.    |
-#      | confirmPassword | Aa234567.    |
-#      | employeeName    | Odis Adalwin |
-#
-#    And Click on the element in select Employee Name
-#      | employeeNameList | Odis Adalwin |
+    And Click on the element in select Employee Name
+      | employeeNameList | Odis Adalwin |
 
+    And Click on the element in Dialog
+      | saveBtn |
 
-#    And Click on the element in Dialog
-#      | saveBtn |
-#
-#    Then Verify contains text
-#      | successMsg | success |
+    Then Verify contains text
+      | successMsg | Success |
 
 
   Scenario: Verifying admin name in Employee Field
-
     And User sending the keys in Dialog Content
       | employeeName | seyda |
 
@@ -49,9 +47,12 @@ Feature: Successfully creating new ESS user
 
   Scenario: Display all required elements on User Management page for Admin users
 
-
-    Then Verify contains text
-      | saveBtn | Save   |
-      | cancel  | Cancel |
-      | |  |
-      | |  |
+    Then Display required element
+      | saveBtn         |
+      | cancel          |
+      | statusSelect    |
+      | userRoleSelect  |
+      | employeeName    |
+      | userName        |
+      | password        |
+      | confirmPassword |
