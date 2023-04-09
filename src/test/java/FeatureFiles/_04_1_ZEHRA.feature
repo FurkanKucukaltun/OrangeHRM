@@ -26,3 +26,13 @@ Feature: Failed password verification
     Then Verify error message for confirm password
 
 
+  Scenario: Verify error message
+
+    And User sending the keys in Dialog Content
+
+      | password        | AA234567. |
+      | confirmPassword | AA234567. |
+
+    Then Verify error message for password characters
+
+
