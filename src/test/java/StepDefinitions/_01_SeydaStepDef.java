@@ -35,8 +35,6 @@ public class _01_SeydaStepDef {
 
     }
 
-
-
     @And("Click on the element in select Employee Name")
     public void clickOnTheElementInSelect(DataTable items) {
         List<String> dialogBtns=items.asList(String.class);
@@ -46,7 +44,6 @@ public class _01_SeydaStepDef {
             wait.until(ExpectedConditions.numberOfElementsToBeMoreThan((By)element, 1));
 
             dc.clickFunction(element.get(2));
-
         }}
 
     @And("User sending the keys in Employee Name")
@@ -58,8 +55,5 @@ public class _01_SeydaStepDef {
             WebElement element = dc.getWebElement(items.get(i).get(0));
             dc.sendKeysFunction(element, items.get(i).get(1));
         }
-
-
     }
-
 }
