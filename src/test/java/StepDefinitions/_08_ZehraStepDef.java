@@ -19,10 +19,9 @@ public class _08_ZehraStepDef {
     @Then("Verify add button")
     public void verifyAddButton() {
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
-                ("//i[@class='oxd-icon bi-plus oxd-button-icon']")));
+        wait.until(ExpectedConditions.visibilityOf(dc.getWebElement("addBtn")));
 
-        Assert.assertTrue(dc.getWebElement("addBtnVerify").getText().
+        Assert.assertTrue(dc.getWebElement("addBtn").getText().
                 equalsIgnoreCase("Add"));
     }
 }

@@ -11,56 +11,57 @@ Feature: Verifying mandatory field notification messages.
 
       | addBtn |
 
-    Scenario: Saving before entering mandatory field.
+  Scenario: Saving before entering mandatory field.
 
-      And User sending the keys in Dialog Content
 
-      | userName        | ofyekeler  |
-      | password        | OfY.123456 |
-      | confirmPassword | OfY.123456 |
-
-      And Click on the element in Dialog
+    And Click on the element in Dialog
 
       | saveBtn |
 
-      Then Verify red color message
 
-    Scenario: Not get the same username
+    Then Verify contains text
+      | required | Required |
 
-      And User sending the keys in Dialog Content
+  Scenario: Not get the same username
 
-        | userName        | Admin      |
-        | password        | OfY.123456 |
-        | confirmPassword | OfY.123456 |
+    And Click on the element in Dialog
+      | statusSelect       |
+      | selectStatusEnable |
+      | userRoleSelect     |
+      | selectRoleESS      |
 
-      And User sending the keys in Employee Name
+#    And Select on the element in Dialog
+#      | userRoleSelect | Admin   |
+#      | statusSelect   | Enabled |
 
-        | employeeName | Admin |
+    And User sending the keys in Dialog Content
 
-      And Click on the element in select Employee Name
+      | userName        | Admin         |
+      | password        | OfY.123456    |
+      | confirmPassword | OfY.123456    |
+      | employeeName    | Odis  Adalwin |
 
-        | employeeNameList |
 
-      And Select on the element in Dialog
-        | userRoleSelect | Admin   |
-        | statusSelect   | Enabled |
+    And Click on the element in select Employee Name
+      | employeeNameList | Odis Adalwin |
 
-      And Click on the element in Dialog
 
-        | saveBtn |
+    And Click on the element in Dialog
 
-      Then Verify Already Exists message
+      | saveBtn |
 
-    Scenario: Password should be at least 8 characters
+    Then Verify Already Exists message
 
-      And User sending the keys in Dialog Content
+  Scenario: Password should be at least 8 characters
 
-        | userName        | ofyekeler  |
-        | password        | OfY.123    |
-        | confirmPassword | OfY.123    |
+    And User sending the keys in Dialog Content
 
-      And Click on the element in Dialog
+      | userName        | ofyekeler |
+      | password        | OfY.123   |
+      | confirmPassword | OfY.123   |
 
-        | saveBtn |
+    And Click on the element in Dialog
 
-      Then Verify 8 characters message
+      | saveBtn |
+
+    Then Verify 8 characters message

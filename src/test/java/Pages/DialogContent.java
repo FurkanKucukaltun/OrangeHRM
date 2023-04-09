@@ -5,8 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.util.List;
-
 public class DialogContent extends Parent {
 
     public DialogContent() {
@@ -22,7 +20,6 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement loginBtn;
 
-    //div[@role='listbox']
     @FindBy(xpath = "//*[text()=' Add ']")
     private WebElement addBtn;
 
@@ -62,11 +59,7 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message'])[2]")
     private WebElement confirmPasswordMsg;
 
-    @FindBy(xpath = "//i[@class='oxd-icon bi-plus oxd-button-icon']")
-                                             //   "//button[@class='oxd-button oxd-button--medium oxd-button--secondary']")
-    private WebElement addBtnVerify;        //   çalışmazsa , kontrol et? (waitte de located değiştir)
-    
-      @FindBy(xpath = "//span [text()='Required']")
+      @FindBy(xpath = "(//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message'])[1]")
     private WebElement required;
 
     @FindBy(xpath = "//span[text()='Already exists']")
@@ -81,7 +74,17 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//*[@class='oxd-table-card']//div[text()='Jasmine Morgan']")
     private WebElement JasmineMorgan;
 
+    @FindBy(xpath = "//*[text()='Success']")
+    private WebElement successMsg;
 
+    @FindBy(xpath = "(//button[@type='button'])[2]")
+    private WebElement cancel;
+
+    @FindBy(xpath = "(//div[@class='oxd-select-wrapper']/div[@role='listbox']/div)[2]")
+    private WebElement selectStatusEnable;
+
+    @FindBy(xpath = "(//div[@class='oxd-select-wrapper']/div[@role='listbox']/div)[3]")
+    private WebElement selectRoleESS;
 
     public WebElement getWebElement(String strButton) {
 
@@ -103,19 +106,16 @@ public class DialogContent extends Parent {
             case "errorMsg": return errorMsg;
             case "AddUserHeading": return AddUserHeading;
             case "confirmPasswordMsg": return confirmPasswordMsg;
-            case "addBtnVerify": return addBtnVerify;
             case "passwordChr": return passwordChr;
             case "required": return required;
             case "alreadyExists": return alreadyExists;
             case "atLeastEightCharacters": return atLeastEightCharacters;
             case "Jasmine Morgan": return JasmineMorgan;
-
-
+            case "successMsg": return successMsg;
+            case "cancel": return cancel;
+            case "selectStatusEnable": return selectStatusEnable;
+            case "selectRoleESS": return selectRoleESS;
         }
-
         return null;
     }
-
-
-
 }

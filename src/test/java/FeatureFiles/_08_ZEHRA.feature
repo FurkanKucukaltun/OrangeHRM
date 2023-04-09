@@ -6,4 +6,6 @@ Feature: We should be able to see Add button displayed
     And  Click on the element in LeftNav
       | admin |
 
+  Scenario:
+
     Then Verify add button
