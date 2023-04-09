@@ -73,6 +73,7 @@ public class DialogContent extends Parent {
 //    private WebElement ;
 
 
+
     public WebElement getWebElement(String strButton) {
 
         switch (strButton) {
