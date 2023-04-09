@@ -17,7 +17,7 @@ Feature: Successfully creating new ESS user
       | password        | Aa234567. |
       | confirmPassword | Aa234567. |
 
-    And User sending the keys in Employee Name
+    And User sending the keys in Dialog Content
       | employeeName | A |
 
     And Click on the element in select Employee Name

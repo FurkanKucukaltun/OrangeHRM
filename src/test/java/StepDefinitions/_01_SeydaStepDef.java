@@ -35,15 +35,18 @@ public class _01_SeydaStepDef {
 
     }
 
+
+
     @And("Click on the element in select Employee Name")
     public void clickOnTheElementInSelect(DataTable items) {
         List<String> dialogBtns=items.asList(String.class);
         for (String dialogBtn: dialogBtns) {
-            List<WebElement> element = dc.getWebElementList(dialogBtn);
-         //   wait.until(ExpectedConditions.textToBePresentInElement(element, "Odis Adalwin"));
-            wait.until(ExpectedConditions.numberOfElementsToBeMoreThan((By)element, 1));
+            WebElement element = dc.getWebElement(dialogBtn);
+           // wait.until(ExpectedConditions.textToBePresentInElement(element, "Odis Adalwin"));
+            wait.until(ExpectedConditions.stalenessOf(element));
+            //wait.until(ExpectedConditions.numberOfElementsToBeMoreThan((By)element, 1));
+            dc.clickFunction(element);
 
-            dc.clickFunction(element.get(2));
         }}
 
     @And("User sending the keys in Employee Name")
