@@ -22,7 +22,6 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement loginBtn;
 
-    //div[@role='listbox']
     @FindBy(xpath = "//*[text()=' Add ']")
     private WebElement addBtn;
 
@@ -35,8 +34,8 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//input[@placeholder='Type for hints...']")
     private WebElement employeeName;
 
-    @FindBy(xpath = "")
-    private WebElement employeeNameList;  //div[@class='oxd-autocomplete-text-input--after']
+    @FindBy(xpath = "//div[@role='listbox']")
+    private WebElement employeeNameList;
 
     @FindBy(xpath = "(//input[@class='oxd-input oxd-input--active'])[2]")
     private WebElement userName;
